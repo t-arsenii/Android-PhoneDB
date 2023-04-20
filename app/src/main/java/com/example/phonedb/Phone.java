@@ -6,7 +6,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "Phone")
-public class PhoneModel {
+public class Phone {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     private long id;
@@ -25,7 +25,7 @@ public class PhoneModel {
     @ColumnInfo(name = "url")
     private String url;
 
-    public PhoneModel(@NonNull String producent, @NonNull String model, int a_version, @NonNull String url) {
+    public Phone(@NonNull String producent, @NonNull String model, int a_version, @NonNull String url) {
         this.producent = producent;
         this.model = model;
         this.a_version = a_version;

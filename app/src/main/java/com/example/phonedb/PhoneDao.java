@@ -11,7 +11,7 @@ import java.util.List;
 @Dao
 public interface PhoneDao {
     @Insert(onConflict = OnConflictStrategy.ABORT)
-    void insert(PhoneDao element);
+    public void insert(Phone element);
     @Query("DELETE FROM Phone")
     void deleteAll();
     //metoda zwraca listę elementów opakowaną w pojemnik live
@@ -20,5 +20,5 @@ public interface PhoneDao {
     //w innym wątku
     //live data powiadamia obserwatora w głównym wątku aplikacji
     @Query("SELECT * FROM Phone ORDER BY producent ASC")
-    LiveData<List<PhoneModel>> getAlphabetizedElements();
+    LiveData<List<Phone>> getAlphabetizedElements();
 }
