@@ -31,9 +31,47 @@ public class Phone {
         this.a_version = a_version;
         this.url = url;
     }
-    //jeżeli konieczne są dodatkowe konstruktory należy
-    //je poprzedzić adnotacją @Ignore
-    //żeby biblioteka Room z nich nie korzystała
-    //Room może wymagać również getterów i setterów także
-    //warto je utworzyć
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    @NonNull
+    public String getProducent() {
+        return producent;
+    }
+
+    public void setProducent(@NonNull String producent) {
+        this.producent = producent;
+    }
+
+    @NonNull
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(@NonNull String model) {
+        this.model = model;
+    }
+
+    public int getA_version() {
+        return a_version;
+    }
+
+    public void setA_version(int a_version) {
+        this.a_version = a_version;
+    }
+
+    @NonNull
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(@NonNull String url) {
+        this.url = url;
+    }
 }

@@ -1,7 +1,6 @@
 package com.example.phonedb;
 
 import android.content.Context;
-import android.provider.ContactsContract;
 
 import androidx.annotation.NonNull;
 import androidx.room.Database;
@@ -12,7 +11,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {ContactsContract.CommonDataKinds.Phone.class}, version = 1, exportSchema = false)
+@Database(entities = {Phone.class}, version = 1, exportSchema = false)
 public abstract class PhoneRoomDatabase extends RoomDatabase {
     public abstract PhoneDao PhoneDao();
     private static volatile PhoneRoomDatabase INSTANCE;
