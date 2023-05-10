@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InsertActivity">
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:shrinkColumns="*"
+        android:stretchColumns="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:id="@+id/wiersz1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/etykieta1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manufactor"></TextView>
+
+            <EditText
+                android:id="@+id/EditText_Manufactor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_span="2"
+                android:text=""></EditText>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/wiersz2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/etykieta2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Model"></TextView>
+
+            <EditText
+                android:id="@+id/EditText_Model"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_span="2"
+                android:text=""></EditText>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/wiersz3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/etykieta3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Android version"></TextView>
+
+            <EditText
+                android:id="@+id/EditText_AndroidVersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_span="2"
+                android:text=""></EditText>
+        </TableRow>
+        <TableRow
+            android:id="@+id/wiersz4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/etykieta4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Web Site"></TextView>
+
+            <EditText
+                android:id="@+id/EditText_WebSite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_span="2"
+                android:text=""></EditText>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/wiersz5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button_WebSite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Web Site" />
+
+            <Button
+                android:id="@+id/button_Cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel" />
+
+            <Button
+                android:id="@+id/button_Save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save" />
+        </TableRow>
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
