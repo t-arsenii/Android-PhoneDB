@@ -2,8 +2,12 @@ package com.example.phonedb;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -33,7 +37,21 @@ public class MainActivity extends AppCompatActivity {
                 elements -> {
                     mAdapter.setPhoneList(elements);
                 });
-
+        mActivityResultLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                //w <> typ wyniku - tutaj ActivityResult, może
+                //też być Uri
+                new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(
+                            ActivityResult result) {
+                        if (result.getResultCode() == RESULT_OK) {
+                            Intent resultIntent = result.getData();
+                            System.out.println(resultIntent.getStringExtra(InsertActivity.RESULT_WEBSITE));
+                            System.out.println(resultIntent.getStringExtra(InsertActivity.RESULT_MODEL));
+                            System.out.println(resultIntent.getStringExtra(InsertActivity.RESULT_MANUFACTOR));
+                            System.out.println(resultIntent.getStringExtra(InsertActivity.RESULT_ANDRVER));
+                        }}});
     }
     private void startSecondActivity() {
         Intent intent = new Intent(this, InsertActivity.class);

@@ -16,10 +16,10 @@ public class InsertActivity extends AppCompatActivity {
     EditText et_model;
     EditText et_andrver;
     EditText et_website;
-    String RESULT_MANUFACTOR = "";
-    String RESULT_MODEL = "";
-    String RESULT_ANDRVER = "";
-    String RESULT_WEBSITE = "";
+    public static final String RESULT_MANUFACTOR = "";
+    public static final String RESULT_MODEL = "";
+    public static final String RESULT_ANDRVER = "";
+    public static final String RESULT_WEBSITE = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +29,7 @@ public class InsertActivity extends AppCompatActivity {
         btn_save = findViewById(R.id.button_Save);
         et_manufactor = findViewById(R.id.EditText_Manufactor);
         et_model = findViewById(R.id.EditText_Model);
-        et_andrver = findViewById(R.id.EditText_Model);
+        et_andrver = findViewById(R.id.EditText_AndroidVersion);
         et_website = findViewById(R.id.EditText_WebSite);
 
         btn_cancel.setOnClickListener(v -> {
