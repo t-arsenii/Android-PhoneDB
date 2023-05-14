@@ -15,8 +15,13 @@ public class PhoneListAdapter extends
         RecyclerView.Adapter<PhoneListAdapter.PhoneViewHolder> {
     private List<Phone> mPhoneList;
     private LayoutInflater mLayoutInflater;
-
+    private OnItemClickListener mOnItemClickListener;
+    interface OnItemClickListener
+    {
+        void onItemClickListener(Phone element);
+    }
     public PhoneListAdapter(Context context) {
+        mOnItemClickListener = (OnItemClickListener)context;
         mLayoutInflater = LayoutInflater.from(context);
         this.mPhoneList = null;
     }
@@ -30,7 +35,6 @@ public class PhoneListAdapter extends
 
     @Override
     public void onBindViewHolder(@NonNull PhoneViewHolder holder, int position) {
-        System.out.println(mPhoneList);
         holder.textViewProducent.setText(mPhoneList.get(position).getProducent());
         holder.textViewModel.setText(mPhoneList.get(position).getModel());
     }
@@ -45,7 +49,7 @@ public class PhoneListAdapter extends
         this.mPhoneList = elementList;
         notifyDataSetChanged();
     }
-    public class PhoneViewHolder extends RecyclerView.ViewHolder
+    public class PhoneViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
         public TextView textViewProducent;
         public TextView textViewModel;
@@ -55,6 +59,13 @@ public class PhoneListAdapter extends
             super(itemView);
             textViewProducent = itemView.findViewById(R.id.textViewProducent);
             textViewModel = itemView.findViewById(R.id.textViewModel);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            int position = this.getAdapterPosition();
+            mOnItemClickListener.onItemClickListener(mPhoneList.get(position));
         }
     }
 }

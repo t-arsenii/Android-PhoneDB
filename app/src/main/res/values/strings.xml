@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PhoneDB</string>
+    <string name="error_model">PhoneDB</string>
+    <string name="error_producer">PhoneDB</string>
+    <string name="error_aver">PhoneDB</string>
+    <string name="error_website">PhoneDB</string>
 </resources>

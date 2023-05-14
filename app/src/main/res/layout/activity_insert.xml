@@ -9,6 +9,10 @@
     <TableLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:shrinkColumns="*"
         android:stretchColumns="2"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -71,8 +75,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_span="2"
+                android:inputType="number"
                 android:text=""></EditText>
         </TableRow>
+
         <TableRow
             android:id="@+id/wiersz4"
             android:layout_width="match_parent"

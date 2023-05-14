@@ -5,8 +5,10 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity(tableName = "Phone")
-public class Phone {
+public class Phone implements Serializable {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     private long id;
@@ -73,5 +75,16 @@ public class Phone {
 
     public void setUrl(@NonNull String url) {
         this.url = url;
+    }
+
+    @Override
+    public String toString() {
+        return "Phone{" +
+                "id=" + id +
+                ", producent='" + producent + '\'' +
+                ", model='" + model + '\'' +
+                ", a_version=" + a_version +
+                ", url='" + url + '\'' +
+                '}';
     }
 }
